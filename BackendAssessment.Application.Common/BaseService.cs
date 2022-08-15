@@ -10,7 +10,7 @@ namespace BackendAssessment.Application.Common
         protected readonly IHttpContextAccessor httpContext;
         protected readonly IUnitOfWork unitOfWork;
         protected readonly IHotelsUnitOfWork hotelsUnitOfWork;
-        protected readonly ILiveMessagingUnitOfWork liveMessagingUnitOfWork;
+        protected readonly IAttachmentsUnitOfWork liveMessagingUnitOfWork;
         protected readonly ILogger<BaseService> logger;
         protected readonly IMapper mapper;
 
@@ -26,7 +26,7 @@ namespace BackendAssessment.Application.Common
         }
 
         public BaseService(
-            ILiveMessagingUnitOfWork liveMessagingUnitOfWork,
+            IAttachmentsUnitOfWork liveMessagingUnitOfWork,
             ILogger<BaseService> logger,
             IMapper mapper)
         {

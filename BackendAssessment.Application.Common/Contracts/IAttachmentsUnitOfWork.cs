@@ -1,6 +1,6 @@
 ﻿namespace BackendAssessment.Application.Common.Contracts
 {
-    public interface ILiveMessagingUnitOfWork : IUnitOfWork
+    public interface IAttachmentsUnitOfWork : IUnitOfWork
     {
     }
 }
