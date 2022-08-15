@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Api", "BackendAssessment.Api\BackendAssessment.Api.csproj", "{DA168584-6F3F-4691-AA2E-F91E45258826}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.Api", "BackendAssessment.Api\BackendAssessment.Api.csproj", "{DA168584-6F3F-4691-AA2E-F91E45258826}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Endpoints", "1-Endpoints", "{DBEDCF03-5327-4908-9421-ACDE00F5AA2F}"
 EndProject
@@ -15,27 +15,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Shared", "4-Shared", "{1E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Infrastructure", "5-Infrastructure", "{4B6DADD6-303A-4523-8A93-AD9AE3802BC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Repositories.Common", "BackendAssessment.Repositories.Common\BackendAssessment.Repositories.Common.csproj", "{E988104D-EB07-471E-A284-EA453C7E9363}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.Repositories.Common", "BackendAssessment.Repositories.Common\BackendAssessment.Repositories.Common.csproj", "{E988104D-EB07-471E-A284-EA453C7E9363}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Common", "BackendAssessment.Common\BackendAssessment.Common.csproj", "{3F9E452B-5182-4BD1-B0E3-6F6C1A595805}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.Common", "BackendAssessment.Common\BackendAssessment.Common.csproj", "{3F9E452B-5182-4BD1-B0E3-6F6C1A595805}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Domain", "BackendAssessment.Domain\BackendAssessment.Domain.csproj", "{E208D445-E77A-47DF-BB52-2A2B63BE60DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.Domain", "BackendAssessment.Domain\BackendAssessment.Domain.csproj", "{E208D445-E77A-47DF-BB52-2A2B63BE60DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{F4C69C55-35F3-4EC7-8460-F116DCE58F4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Application.Storage", "BackendAssessment.Application.Storage\BackendAssessment.Application.Storage.csproj", "{AA5A93E4-33E1-4FF9-8156-DE8C1FCEC3B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.Application.Storage", "BackendAssessment.Application.Storage\BackendAssessment.Application.Storage.csproj", "{AA5A93E4-33E1-4FF9-8156-DE8C1FCEC3B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Application.Common", "BackendAssessment.Application.Common\BackendAssessment.Application.Common.csproj", "{E60C11A7-536C-4095-A3FA-2A77DD74A4E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.Application.Common", "BackendAssessment.Application.Common\BackendAssessment.Application.Common.csproj", "{E60C11A7-536C-4095-A3FA-2A77DD74A4E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Infrastructure.Storage", "BackendAssessment.Infrastructure.Storage\BackendAssessment.Infrastructure.Storage.csproj", "{D1A10236-38A3-481E-A1D1-2E689DB02A88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.Infrastructure.Storage", "BackendAssessment.Infrastructure.Storage\BackendAssessment.Infrastructure.Storage.csproj", "{D1A10236-38A3-481E-A1D1-2E689DB02A88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.DependencyResolver", "BackendAssessment.DependencyResolver\BackendAssessment.DependencyResolver.csproj", "{4259B5FE-88F1-4152-9FEE-7669825D82C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.DependencyResolver", "BackendAssessment.DependencyResolver\BackendAssessment.DependencyResolver.csproj", "{4259B5FE-88F1-4152-9FEE-7669825D82C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Repositories.Storage", "BackendAssessment.Repositories.Storage\BackendAssessment.Repositories.Storage.csproj", "{E6847F8E-B548-4FB2-BDE7-7E8CAB62D3B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.Repositories.Storage", "BackendAssessment.Repositories.Storage\BackendAssessment.Repositories.Storage.csproj", "{E6847F8E-B548-4FB2-BDE7-7E8CAB62D3B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Application.Hotels", "BackendAssessment.Application.Hotels\BackendAssessment.Application.Hotels.csproj", "{75109A35-BF4E-400B-997D-530F2B340235}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.Application.Hotels", "BackendAssessment.Application.Hotels\BackendAssessment.Application.Hotels.csproj", "{75109A35-BF4E-400B-997D-530F2B340235}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Repositories.Hotels", "BackendAssessment.Repositories.Hotels\BackendAssessment.Repositories.Hotels.csproj", "{15C0BDF1-B0CE-46EC-B73C-FB74646D57A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAssessment.Repositories.Hotels", "BackendAssessment.Repositories.Hotels\BackendAssessment.Repositories.Hotels.csproj", "{15C0BDF1-B0CE-46EC-B73C-FB74646D57A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendAssessment.Application.Hotels.Test", "BackendAssessment.Application.Hotels.Test\BackendAssessment.Application.Hotels.Test.csproj", "{CE7B1845-5F15-4006-8FFE-543C9EBFE683}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{15C0BDF1-B0CE-46EC-B73C-FB74646D57A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15C0BDF1-B0CE-46EC-B73C-FB74646D57A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15C0BDF1-B0CE-46EC-B73C-FB74646D57A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE7B1845-5F15-4006-8FFE-543C9EBFE683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE7B1845-5F15-4006-8FFE-543C9EBFE683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE7B1845-5F15-4006-8FFE-543C9EBFE683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE7B1845-5F15-4006-8FFE-543C9EBFE683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +110,7 @@ Global
 		{E6847F8E-B548-4FB2-BDE7-7E8CAB62D3B9} = {15A1509C-45E1-4D25-A7B0-F9C0A11FBE10}
 		{75109A35-BF4E-400B-997D-530F2B340235} = {D5A2C690-75EE-4126-A726-0E0205516E37}
 		{15C0BDF1-B0CE-46EC-B73C-FB74646D57A5} = {15A1509C-45E1-4D25-A7B0-F9C0A11FBE10}
+		{CE7B1845-5F15-4006-8FFE-543C9EBFE683} = {D5A2C690-75EE-4126-A726-0E0205516E37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9740C372-D21A-431B-BABC-04A12D5307AF}
