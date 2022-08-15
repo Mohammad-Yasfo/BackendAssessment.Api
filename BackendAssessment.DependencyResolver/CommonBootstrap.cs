@@ -6,6 +6,10 @@ using BackendAssessment.Application.Common.Storage.Contracts;
 using BackendAssessment.Application.Storage.Configuration;
 using BackendAssessment.Infrastructure.AzureBlobStorage;
 using BackendAssessment.Application.Storage.Validators;
+using BackendAssessment.Application.Common.Configuration;
+using BackendAssessment.Repositories.Hotels;
+using BackendAssessment.Repositories.Storage;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackendAssessment.DependencyResolver
 {
@@ -14,11 +18,30 @@ namespace BackendAssessment.DependencyResolver
     {
         public static IServiceCollection RegisterCommonDependencies(this IServiceCollection services, IConfiguration configuration)
         {
+            var dbConnectionConfig = configuration.GetDbConnectionConfiguration();
+
             return services
                 .AddCommonApplication(configuration)
                 .AddCommonRepositories()
                 .ConfigureBlobStorage()
-                .AddCommonMapping();
+                .AddCommonMapping()
+                .AddDbContexts(dbConnectionConfig);
+        }
+
+        public static DbConnectionConfiguration GetDbConnectionConfiguration(this IConfiguration configuration)
+        {
+            return new DbConnectionConfiguration
+            {
+                HotelsConnectionString = configuration.GetConnectionString("HotelsConnectionString"),
+                StorageConnectionString = configuration.GetConnectionString("StorageConnectionString"),
+            };
+        }
+
+        private static IServiceCollection AddDbContexts(this IServiceCollection services, DbConnectionConfiguration dbConnectionConfig)
+        {
+            return services
+                .AddDbContext<HotelsDbContext>(options => options.UseSqlServer(dbConnectionConfig.HotelsConnectionString))
+                .AddDbContext<AttachmentsDbContext>(options => options.UseSqlServer(dbConnectionConfig.StorageConnectionString));
         }
 
         private static IServiceCollection AddCommonRepositories(this IServiceCollection services)
