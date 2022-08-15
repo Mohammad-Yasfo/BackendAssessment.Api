@@ -25,7 +25,8 @@ namespace BackendAssessment.DependencyResolver
                 .AddCommonRepositories()
                 .ConfigureBlobStorage()
                 .AddCommonMapping()
-                .AddDbContexts(dbConnectionConfig);
+                .AddDbContexts(dbConnectionConfig)
+                .AddBlobStorageConfiguration(configuration);
         }
 
         public static DbConnectionConfiguration GetDbConnectionConfiguration(this IConfiguration configuration)
@@ -34,6 +35,22 @@ namespace BackendAssessment.DependencyResolver
             {
                 HotelsConnectionString = configuration.GetConnectionString("HotelsConnectionString"),
                 StorageConnectionString = configuration.GetConnectionString("StorageConnectionString"),
+            };
+        }
+
+        private static IServiceCollection AddBlobStorageConfiguration(this IServiceCollection services, IConfiguration configuration)
+        {
+            return services
+                .AddSingleton(configuration.GetBlobConfiguration());
+        }
+
+        public static BlobContainerSettings GetBlobConfiguration(this IConfiguration configuration)
+        {
+            //return configuration.GetSection("BlobSettings").Get<BlobSettings>();
+            return new BlobContainerSettings()
+            {
+                ConnectionString = configuration.GetSection("BlobSettings").GetConnectionString("ConnectionString"),
+                Name = configuration.GetSection("BlobSettings").GetConnectionString("Name")
             };
         }
 

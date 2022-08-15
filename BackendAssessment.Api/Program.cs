@@ -14,7 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services
-    .RegisterCommonDependencies(configuration);
+    .RegisterCommonDependencies(configuration)
+    .RegisterHotelsDependencies(configuration);
 
 var app = builder.Build();
 
