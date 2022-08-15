@@ -1,5 +1,7 @@
 ﻿using BackendAssessment.Api.Base;
 using BackendAssessment.Application.Common.Dtos;
+using BackendAssessment.Application.Hotels.Contracts;
+using BackendAssessment.Application.Hotels.Dtos;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,37 +11,45 @@ namespace BackendAssessment.Api.Controllers.Hotels
     /// <summary>
     /// 
     /// </summary>
-    [Route("api/v1.0/hotels/profile")]
+    [Route("api/v1.0/hotels")]
     //[Authorize]
     [ApiController]
     public class HotelProfileController : BaseApiController
     {
-        private readonly IHotelProfilesService service;
+        private readonly IHotelsService service;
         private readonly AbstractValidator<PagingDto> pagingValidator;
 
-        public HotelProfileController(IHotelProfilesService service,
+        public HotelProfileController(IHotelsService service,
             AbstractValidator<PagingDto> pagingValidator,
             ILogger<HotelProfileController> logger) : base(logger)
         {
             this.service = service;
             this.pagingValidator = pagingValidator;
         }
-        
-        [HttpGet("{id}")]
-        [Produces(typeof(PaginatedDto<IntermediariesBookingListItemDto>))]
-        public async Task<IActionResult> GetRequestsAsync([FromQuery] PagingDto pagingDto)
+
+        [HttpGet]
+        [Produces(typeof(IList<HotelListingItemDto>))]
+        public async Task<IActionResult> GetAsync([FromQuery] string hotelName)
         {
             try
             {
-                var validationResult = pagingValidator.Validate(pagingDto);
+                var result = await service.GetAsync(hotelName);
 
-                if (!validationResult.IsValid)
-                {
-                    var modelState = validationResult.ToModelState(ModelState);
-                    return BadRequest(modelState);
-                }
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
 
-                var result = await service.GetRequestsAsync(pagingDto.PageIndex, pagingDto.PageSize);
+        [HttpGet("profile/{id}")]
+        [Produces(typeof(IList<HotelListingItemDto>))]
+        public async Task<IActionResult> GetAsync([FromQuery] Guid hotelId)
+        {
+            try
+            {
+                var result = await service.GetProfileAsync(hotelId);
 
                 return Ok(result);
             }

@@ -2,8 +2,8 @@
 {
     public class HotelFilter
     {
-        public double? Radius { get; set; }
-        public double? Budget { get; set; }
+        public decimal? Radius { get; set; }
+        public decimal? Budget { get; set; }
         public HotelFilterLocation? Location { get; set; }
         public IList<byte>? Facilities { get; set; }
         public IList<byte>? Services { get; set; }

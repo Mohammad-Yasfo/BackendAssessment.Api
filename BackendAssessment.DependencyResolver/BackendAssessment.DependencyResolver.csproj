@@ -15,7 +15,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BackendAssessment.Application.Common\BackendAssessment.Application.Common.csproj" />
+    <ProjectReference Include="..\BackendAssessment.Application.Hotels\BackendAssessment.Application.Hotels.csproj" />
     <ProjectReference Include="..\BackendAssessment.Infrastructure.Storage\BackendAssessment.Infrastructure.Storage.csproj" />
+    <ProjectReference Include="..\BackendAssessment.Repositories.Hotels\BackendAssessment.Repositories.Hotels.csproj" />
     <ProjectReference Include="..\BackendAssessment.Repositories.Storage\BackendAssessment.Repositories.Storage.csproj" />
   </ItemGroup>
 

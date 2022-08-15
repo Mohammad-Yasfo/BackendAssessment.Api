@@ -1,11 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Diagnostics.CodeAnalysis;
-using BackendAssessment.Application.Common.Storage.Contracts;
-using BackendAssessment.Application.Storage.Configuration;
-using BackendAssessment.Infrastructure.AzureBlobStorage;
-using BackendAssessment.Application.Storage.Validators;
+using BackendAssessment.Application.Hotels.Contracts;
+using BackendAssessment.Application.Hotels.Services;
+using BackendAssessment.Repositories.Hotels.Repositories;
 
 namespace BackendAssessment.DependencyResolver
 {
@@ -22,22 +20,26 @@ namespace BackendAssessment.DependencyResolver
 
         private static IServiceCollection AddHotelsRepositories(this IServiceCollection services)
         {
-            return services;
+            return services
+                .AddScoped<IHotelsRepository, HotelsRepository>()
+                .AddScoped<ISearchRepository, SearchRepository>();
         }
 
         private static IServiceCollection AddHotelsApplication(this IServiceCollection services, IConfiguration configuration)
         {
             // Configure service layer
 
-            return services;
+            return services
+                .AddScoped<IHotelsService, HotelsService>()
+                .AddScoped<ISearchService, SearchService>();
         }
 
         private static IServiceCollection AddHotelsMapping(this IServiceCollection services)
         {
             return services
                 .AddAutoMapper(
-                    typeof(Application.Storage.Profiles.AttachmentMappingProfile).Assembly,
-                    typeof(Repositories.Storage.Profiles.AttachmentMappingProfile).Assembly
+                    typeof(Application.Hotels.Profiles.HotelsMappingProfile).Assembly,
+                    typeof(Repositories.Hotels.Profiles.HotelsMappingProfile).Assembly
                 );
         }
     }

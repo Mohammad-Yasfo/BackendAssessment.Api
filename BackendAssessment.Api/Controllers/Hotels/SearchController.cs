@@ -1,6 +1,8 @@
 ﻿using BackendAssessment.Api.Base;
 using BackendAssessment.Api.Extensions;
 using BackendAssessment.Application.Common.Dtos;
+using BackendAssessment.Application.Hotels.Contracts;
+using BackendAssessment.Application.Hotels.Dtos;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -26,10 +28,10 @@ namespace BackendAssessment.Api.Controllers.Hotels
             this.pagingValidator = pagingValidator;
         }
 
-
         [HttpGet]
         [Produces(typeof(PaginatedDto<HotelListingItemDto>))]
-        public async Task<IActionResult> GetRequestsAsync([FromQuery] PagingDto pagingDto, string searchName, FilterDto filterDto)
+        public async Task<IActionResult> GetRequestsAsync([FromQuery] PagingDto pagingDto,
+            [FromForm] string searchName, [FromForm] string checkIn, [FromForm] string checkOut, [FromForm] FilterDto filterDto)
         {
             //Validation
             var validationResult = pagingValidator.Validate(pagingDto);
@@ -42,7 +44,7 @@ namespace BackendAssessment.Api.Controllers.Hotels
 
             try
             {
-                var result = await service.GetHotelsAsync(pagingDto.PageIndex, pagingDto.PageSize);
+                var result = await service.GetAsync(pagingDto.PageIndex, pagingDto.PageSize, searchName, checkIn, checkOut, filterDto);
 
                 return Ok(result);
             }
