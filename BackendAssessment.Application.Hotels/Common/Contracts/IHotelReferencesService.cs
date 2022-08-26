@@ -1,6 +1,6 @@
 ﻿using BackendAssessment.Application.Hotels.Dtos;
 
-namespace BackendAssessment.Application.Hotels.Contracts
+namespace BackendAssessment.Application.Hotels.Common.Contracts
 {
     public interface IHotelReferencesService
     {

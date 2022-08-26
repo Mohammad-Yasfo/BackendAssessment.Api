@@ -1,5 +1,5 @@
 ﻿using BackendAssessment.Api.Base;
-using BackendAssessment.Application.Hotels.Contracts;
+using BackendAssessment.Application.Hotels.Common.Contracts;
 using BackendAssessment.Application.Hotels.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
